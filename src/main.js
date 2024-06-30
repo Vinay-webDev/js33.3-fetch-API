@@ -31,14 +31,14 @@ const myAnotherFunction = async () => {
 
 myAnotherFunction(); */
 //--------------------------------------//-------------------//
-
+/*
 const myUsers = {
     usersLists: [],
 }
 
 const myFunction = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const jsonUserData = response.json();
+    const jsonUserData = await response.json();
     return jsonUserData;
 }
 
@@ -48,11 +48,22 @@ const myAnotherFunction = async () => {
     console.log(myUsers.usersLists);
 }
 
-myAnotherFunction();
+myAnotherFunction(); */
 
 //-------------------------------------//-----------------//
-// 
+// let's move on to another example
+// workflow function
 
+const getAllUserEmail = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const jsonUserData = await response.json();
+    const userEmailArray = jsonUserData.map(user => {
+        return user.email;
+    });
+    console.log(userEmailArray);
+}
+
+getAllUserEmail();
 
 
 
