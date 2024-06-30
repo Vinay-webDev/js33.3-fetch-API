@@ -108,7 +108,7 @@ const getDadJoke = async () => {
         }
     });
 } */
-
+/*
 const getDadJoke = async () => {
     const response = await fetch("https://icanhazdadjoke.com", {
         method: "GET",
@@ -120,7 +120,19 @@ const getDadJoke = async () => {
     console.log(jsonJokeData);
 }
 
+getDadJoke(); */
+
+//to get only the joke 
+const getDadJoke = async () => {
+    const response = await fetch("https://icanhazdadjoke.com", {
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        }
+    })
+    const jsonJokeData = await response.json();
+    console.log(jsonJokeData.joke);
+}
+
 getDadJoke();
-
-
 
