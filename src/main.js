@@ -123,6 +123,7 @@ const getDadJoke = async () => {
 getDadJoke(); */
 
 //to get only the joke 
+/*
 const getDadJoke = async () => {
     const response = await fetch("https://icanhazdadjoke.com", {
         method: "GET",
@@ -134,5 +135,47 @@ const getDadJoke = async () => {
     console.log(jsonJokeData.joke);
 }
 
+getDadJoke(); */
+
+// API's can also return data which is not json***
+// to get plain text from an API 
+
+const getDadJoke = async () => {
+    const response = await fetch("https://icanhazdadjoke.com", {
+        method: "GET",
+        headers: {
+            Accept: "text/plain"
+        }
+    })
+    const textJokeData = await response.text();
+    console.log(textJokeData);
+}
+
 getDadJoke();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
