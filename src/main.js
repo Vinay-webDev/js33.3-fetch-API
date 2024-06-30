@@ -21,7 +21,11 @@ const myFunction = async () => {
 
 const myAnotherFunction = async () => {
     const data = await myFunction();
-    console.log(data);
+    //console.log(data);
+    // to work with data
+    data.forEach(user => {
+        console.log(user);
+    })
 }
 
 myAnotherFunction();
