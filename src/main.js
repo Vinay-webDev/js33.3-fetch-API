@@ -45,12 +45,13 @@ const myFunction = async () => {
 const myAnotherFunction = async () => {
     const data = await myFunction();
     myUsers.usersLists = data;
+    console.log(myUsers.usersLists);
 }
 
 myAnotherFunction();
-console.log(myUsers.usersLists);
 
-
+//-------------------------------------//-----------------//
+// 
 
 
 
