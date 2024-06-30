@@ -80,6 +80,7 @@ const getAllUserEmail = async () => {
 console.log(getAllUserEmail()); */
 //-------------------------------------------------------//
 // *****to get alluserEmail**** inorder to do that we need to define a new function inside our async function *****
+/*
 const getAllUserEmail = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const jsonUserData = await response.json();
@@ -94,13 +95,19 @@ const postToWebPage = (data) => {
     console.log(data);
 }
 
-getAllUserEmail();
+getAllUserEmail();*/
 
+//------------------------------------------------------//
+// 2nd parameter of fetch: is usually or always I should say is an object****
+// fetch 2nd parameter: object 
 
-
-
-
-
+const getDadJoke = async () => {
+    const response = await fetch("https://icanhazdadjoke.com", /*2nd parameter goes here*/ {method: "GET",
+        headers: /* headers which is nested object*/ {
+            Accept: "application/json"
+        }
+    });
+}
 
 
 
