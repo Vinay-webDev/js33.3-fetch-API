@@ -53,7 +53,7 @@ myAnotherFunction(); */
 //-------------------------------------//-----------------//
 // let's move on to another example
 // workflow function
-
+/*
 const getAllUserEmail = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const jsonUserData = await response.json();
@@ -63,11 +63,20 @@ const getAllUserEmail = async () => {
     console.log(userEmailArray);
 }
 
-getAllUserEmail();
+getAllUserEmail(); */
 
+// one more time 
+// even if I return all the userEmail then try log it to the console it won't work***
+const getAllUserEmail = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const jsonUserData = await response.json();
+    const userEmailArray = jsonUserData.map(user => {
+        return user.email;
+    });
+    return userEmailArray;
+}
 
-
-
+console.log(getAllUserEmail());
 
 
 
