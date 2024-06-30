@@ -7,6 +7,7 @@ async function myFunction() {
 
 } */
 //===================//--------------------------//
+/*
 const myUsers = {
     usersLists: [],
 }
@@ -28,7 +29,40 @@ const myAnotherFunction = async () => {
     })
 }
 
+myAnotherFunction(); */
+//--------------------------------------//-------------------//
+
+const myUsers = {
+    usersLists: [],
+}
+
+const myFunction = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const jsonUserData = response.json();
+    return jsonUserData;
+}
+
+const myAnotherFunction = async () => {
+    const data = await myFunction();
+    myUsers.usersLists = data;
+}
+
 myAnotherFunction();
+console.log(myUsers.usersLists);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
