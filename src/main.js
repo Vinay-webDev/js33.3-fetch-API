@@ -100,16 +100,27 @@ getAllUserEmail();*/
 //------------------------------------------------------//
 // 2nd parameter of fetch: is usually or always I should say is an object****
 // fetch 2nd parameter: object 
-
+/*
 const getDadJoke = async () => {
-    const response = await fetch("https://icanhazdadjoke.com", /*2nd parameter goes here*/ {method: "GET",
-        headers: /* headers which is nested object*/ {
+    const response = await fetch("https://icanhazdadjoke.com", /*2nd parameter goes here {method: "GET",
+        headers: /* headers which is nested object {
             Accept: "application/json"
         }
     });
+} */
+
+const getDadJoke = async () => {
+    const response = await fetch("https://icanhazdadjoke.com", {
+        method: "GET",
+        headers: {
+            Accept: "application/json"
+        }
+    })
+    const jsonJokeData = await response.json();
+    console.log(jsonJokeData);
 }
 
-
+getDadJoke();
 
 
 
