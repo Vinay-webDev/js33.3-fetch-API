@@ -67,6 +67,7 @@ getAllUserEmail(); */
 
 // one more time 
 // even if I return all the userEmail then try log it to the console it won't work***
+/*
 const getAllUserEmail = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const jsonUserData = await response.json();
@@ -76,11 +77,24 @@ const getAllUserEmail = async () => {
     return userEmailArray;
 }
 
-console.log(getAllUserEmail());
+console.log(getAllUserEmail()); */
+//-------------------------------------------------------//
+// *****to get alluserEmail**** inorder to do that we need to define a new function inside our async function *****
+const getAllUserEmail = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const jsonUserData = await response.json();
+    const userEmailArray = jsonUserData.map(user => {
+        return user.email;
+    });
+    //console.log(userEmailArray);
+    postToWebPage(userEmailArray);
+}
 
+const postToWebPage = (data) => {
+    console.log(data);
+}
 
-
-
+getAllUserEmail();
 
 
 
