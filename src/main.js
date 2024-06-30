@@ -13,15 +13,18 @@ const myUsers = {
 const myFunction = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const jsonUserData = await response.json();
-    console.log(jsonUserData);
+    //console.log(jsonUserData);
     return jsonUserData;
 }
 
-myFunction();
+//myFunction();
 
+const myAnotherFunction = async () => {
+    const data = await myFunction();
+    console.log(data);
+}
 
-
-
+myAnotherFunction();
 
 
 
